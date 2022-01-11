@@ -1,0 +1,52 @@
+name: Build and Release LaTeX document
+on: [push]
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get current Date
+        id: get_date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d--%H-%M-%S')"
+
+      - name: Set up Git repository
+        id: setup_repo
+        uses: actions/checkout@v2
+
+      - name: Create release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: Polimer-minimumn-${{ steps.get_date.outputs.date }}
+          draft: false
+          prerelease: false
+
+      - name: Compile LaTeX document
+        id: compile_latex
+        uses: xu-cheng/texlive-action/full@v1
+        with:
+          run: |
+            latexmk  -file-line-error -halt-on-error -interaction=nonstopmode -recorder  -pdf "main.tex"
+
+      - name: Upload document to Release
+        id: upload_latex
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./main.pdf
+          asset_name: polimer_minimum.pdf
+          asset_content_type: application/pdf
+
+      - name: Upload document to Release
+        id: upload_log
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./main.log
+          asset_name: logfile.log
+          asset_content_type: text/log

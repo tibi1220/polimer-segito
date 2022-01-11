@@ -1,0 +1,33 @@
+defaultIndent: "  "
+modifyLineBreaks:
+  preserveBlankLines: 1
+  condenseMultipleBlankLinesInto: 0
+  textWrapOptions:
+    # perCodeBlockBasis: 1
+    columns: 80
+    # all: 1
+  # removeParagraphLineBreaks:
+  #   all: 1
+  #   beforeTextWrap: 1
+
+noIndentBlock:
+  noindent1:
+    begin: '%.?\begin{noindent}'
+    body: ".*?"
+    end: '%.?\end{noindent}'
+    lookForThis: 1
+  noindent2:
+    begin: "%.?disable.?latexindent"
+    body: ".*?"
+    end: "%.?enable.?latexindent"
+    lookForThis: 1
+  noindent3:
+    begin: "%.?disable.?indent"
+    body: ".*?"
+    end: "%.?enable.?indent"
+    lookForThis: 1
+  noindent4:
+    begin: "%.?noindent"
+    body: ".*?"
+    end: "%.?indent"
+    lookForThis: 1
