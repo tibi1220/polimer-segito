@@ -18,7 +18,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: Polimer-minimumn-${{ steps.get_date.outputs.date }}
+          tag_name: Polimer-segito-${{ steps.get_date.outputs.date }}
           draft: false
           prerelease: false
 
@@ -37,7 +37,7 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./main.pdf
-          asset_name: polimer_minimum.pdf
+          asset_name: polimer_segito.pdf
           asset_content_type: application/pdf
 
       - name: Upload document to Release
