@@ -4,6 +4,7 @@
 **/*.log
 **/*.out
 **/*.synctex.gz
-**/*.pdf
 **/*.fls
 **/*.fdb_latexmk
+
+/*.pdf

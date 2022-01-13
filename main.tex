@@ -26,6 +26,7 @@
 \usepackage{cancel}
 \usepackage{caption}
 \usepackage{subcaption}
+\usepackage[superscript,biblabel]{cite}
 
 \usepackage{xfrac}                          % Slanted fractions
 \usepackage{lastpage}                       % Reference lastpage in footer
@@ -36,7 +37,7 @@
 \usepackage{float}                          % Float
 \usepackage{icomma}                         % Intelligent decimal separator
 \usepackage{tabto}                          % Tab to a specific location in a document
-\usepackage{multicol}                       % User nultiple cols
+  \usepackage{multicol}                       % User nultiple cols
 \usepackage{hyperref}                       % Mark refs
 \usepackage[                                % More math font
   cal=rsfso, bb=ams
@@ -71,7 +72,11 @@
 
 \usepackage{chemfig}
 
-\title{Polimertechnika felkészülést segítő kérdések \\ \large(BMEGEPTBM01) \\ \texttt{v1.4.0}}
+\title{
+  Polimertechnika felkészülést segítő kérdések\\
+  \large(BMEGEPTBM01)
+  \\ \texttt{v2.0.1}
+}
 \author{Sándor Tibor}
 
 % indent
@@ -112,7 +117,7 @@
 
   Az ismétlődő egységek kovalens kötéssel összekapcsolódva makromolekulát, az
   ún. \textbf{polimermolekulát} hozzák létre. Ez a gyakorlatban több száz,
-  általában ezer ismétlődő egység összekapcsolását jelenti.
+  általában ezer minimum ismétlődő egység összekapcsolását jelenti.
   \tcbline
 
   Az \textbf{oligomer} a polimerhez hasonló, de alapvetően kisebb tömegű
@@ -126,7 +131,9 @@
   polimerizációval ellentétes folyamat a \textbf{degradáció}, amely során a
   polimer láncmolekulák statisztikusan töredeznek, vagy a végük rövidül (más
   néven depolimerizáció), illetve csoportok válnak le a polimer láncról
-  (elimináció).
+  (elimináció). A degradációt elősegíti a magas hőmérséklet, sugárzás
+  (tipikusan UV), nedvesség, mechanikai és vegyi igénybevételek, illetve ezek
+  kombinációja.
   \tcbline
 
   A \textbf{polimertechnika} minden olyan műszaki tevékenység, amit
@@ -160,6 +167,7 @@
   \textbf{Részben kristályos, hőre lágyuló, apoláros} polimer. Opálos, szívós
   anyag, kis merevséggel és sűrűséggel rendelkezik. Nehéz oldatba vinni.
   \textbf{Hidrofób}, \textbf{szigetelő}, de nem aromazáró.
+  $T_g = -120^\circ\text{C}$
   \begin{figure}[H]
     \centering
 
@@ -189,20 +197,22 @@
   \end{figure}
   \textbf{Feldolgozása:}
   \\
-  Fröccsöntéssel, extrúzióval, extrúziós fúvással, rotációs öntéssel.
-  Nenehezen ragasztható, hegeszteni, címkézni érdemes.
+  Fröccsöntéssel, extrúzióval, extrúziós fúvással, rotációs öntéssel. Nehezen
+  ragasztható, hegeszteni, címkézni érdemes.
   \\[2mm]
   \textbf{Fajtái:}
   \begin{itemize}
-    \item LDPE – sok hosszú elágazás, kis kristályos részarány
+    \item LDPE – sok hosszú elágazás, kis kristályos részarány ($35\dots 55\%$)
     \item HDPE – sokkal kevesebb, rövid elágazás, nagyobb kristályos részarány
+          ($70\dots 80\%$)
     \item LLDPE – nagyon sűrűn nagyon sok elágazás, kevés áthurkolódás
     \item UHMWPE – nagy szívósság, kis molekulasűrűség
   \end{itemize}
   \textbf{Felhasználása:}
   \\
   Csomagolófóliák, zacskók, mezőgazdasági fóliák, kábelszigetlések, kültéri
-  székek (HDPE), csípőprotézisek (UHMWPE), gépelemek (UHMWPE)
+  székek (HDPE), csípőprotézisek (UHMWPE), gépelemek (UHMWPE), kompozit
+  erősítőszál (UHMWPE).
   \tcbline
   
 
@@ -215,6 +225,7 @@
   energia-elnyelő képessége van. Rossz UV állósága miatt sárgulásra hajlamos.
   Hidegállóképessége sem az igazi, gyakran társítják \textbf{erősítőanyagokkal}
   (farost, üvegszál). Vegyileg ellenálló, jó \textbf{szigetelő}.
+  $T_g = -5^\circ\text{C}$
   \begin{figure}[H]
     \centering
     
@@ -267,6 +278,7 @@
   egészségre ártalmasak lehetnek. (Lágyítók a molekulák közötti másodrendű
   kötések mennyiségét csökkentik.) Rengetek más adalékot is fel tud venni:
   kvarchomok, talkum, farost.
+  $T_g = 75^\circ\text{C}$
   \begin{figure}[H]
     \centering
 
@@ -313,6 +325,7 @@
   mechanikai tulajdonságokkal rendelkezik. Jó víz- és gázzáró képességű, UV
   stabil, szigetelő, viszont ha nincsen kiszárítva, akkor hidrolízissel
   degradálódik.
+  $T_g = 70^\circ\text{C}$
   \begin{figure}[H]
     \centering
 
@@ -375,6 +388,7 @@
   modulusú, ennélfogva rideg, törékeny, rossz UV-álló. Nedvességet nem vesz
   fel, termikus degradációra sem hajlamos. Festhető, címkézhető, anyagában
   színezhető.
+  $T_g = 105^\circ\text{C}$
   \begin{figure}[H]
     \centering
     
@@ -615,8 +629,9 @@
 \begin{question}{
     Mutassa be a másodrendű kötéseket és azok polimereknél betöltött szerepét.
   }
-  A másodrendű (fizikai, intermolekuláris) kötés az elsőrendű kötéseknél jóval
-  kisebb energiájú kötés, mégis nagy jelentősége van a polimereknél.
+  A másodrendű (fizikai, intramolekuláris) kötés az elsőrendű (kémiai,
+  intermolekuláris) kötéseknél jóval kisebb energiájú kötés, mégis nagy
+  jelentősége van a polimereknél.
   \tcbline
 
   \underline{\textbf{\textit{Diszperziós kölcsönhatás:}}} \\
@@ -737,12 +752,12 @@
       node[below] {$\log \overline{M}_w$};
       \draw[black, thick, ->] (0, -.25) -- (0, 5)
       node[above] {
-        \textcolor{green!50!black}{$\sigma_H$},
+        \textcolor{cyan!50!black}{$\sigma_H$},
         \textcolor{yellow!50!black}{$\eta$}};
 
-      \draw[domain=0:4.5, smooth, variable=\x, green!50!black, ultra thick]
+      \draw[domain=0:4.5, smooth, variable=\x, yellow!50!black, ultra thick]
       plot ({\x}, {.05*exp(\x)});
-      \draw[domain=0:5.5, smooth, variable=\x, yellow!50!black, ultra thick]
+      \draw[domain=0:5.5, smooth, variable=\x, cyan!50!black, ultra thick]
       plot ({\x}, {2*ln(\x+1)});
     \end{tikzpicture}
     \caption{Tulajdonságok a tömeg szerinti átlag függvényében}
@@ -1024,7 +1039,7 @@
 
   A \textbf{fázis} az anyag lényegi része, aminek kémiai összetétele és fizikai
   állapota megegyezik (egységes). A \textbf{fázisdomén} az anyag egy
-  termodinamikailag összefüggő területe.
+  összefüggő területe.
   \tcbline
 
   Az \textbf{amorf} anyagokra a rendezetlen molekulaelhelyezkedés jellemző, a
@@ -1032,7 +1047,9 @@
   amorf anyagok.  Lineáris anyagoknál a szilárdságot az áthurkodódások és a
   diszperziós kölcsönhatás biztosítja. Térhálós anyagoknál elsőrendű
   térhalókötések alakulnak ki. Emiatt nagy óriásmolekulaként viselkednek, nem
-  lehet őket sem alakítani, sem megömleszteni.
+  lehet őket sem alakítani, sem megömleszteni. Az amorf fázisban a legnagyobb a
+  molekulák közötti szabad térfogat, ami kis sűrűséget eredményez, és nagy
+  deformációkat tesz lehetővé.
 \end{question}
 
 
@@ -1042,12 +1059,12 @@
   }
   \textbf{Kristályos} anyagokat \textbf{állandó molekulatávolság} jellemzi.
   Az atomok, atomcsoportok, molekulák, ionok a tér mindhárom irányában
-  szabályos rendben helyezkednek el. Síkok határolják, amelyek élek és csúcsok
-  mentén kapcsolódnak. \textbf{Opálosság} jellemző rájuk. Kristályos polimerek
-  mindig tartalmaznak amorf részt is. Kb. $70\%$-os kristályos részarányig jól
-  használható  a \textbf{rojtos micella modell}. Eszerint túlhűtés hatására
-  beindul a \textbf{felhajtogatódás}, mely során a láncok párhuzamosan
-  hajtogatódnak fel, \textbf{krisztallitok} (lamella) alakulnak ki.
+  szabályos rendben helyezkednek el. Egyértelmű síklapokkal nem határolható.
+  \textbf{Opálosság} jellemző rájuk. Kristályos polimerek mindig tartalmaznak
+  amorf részt is. Kb. $70\%$-os kristályos részarányig jól használható	a
+  \textbf{rojtos micella modell}. Eszerint túlhűtés hatására beindul a
+  \textbf{felhajtogatódás}, mely során a láncok párhuzamosan hajtogatódnak fel,
+  \textbf{krisztallitok} (lamella) alakulnak ki.
 \end{question}
 
 
@@ -1068,7 +1085,7 @@
   elpárolgása után beindul a kristályosodás. Szerencsés esetben felhajtogatódás
   játszódik le, mely során \textbf{lamella} (sík kiterjedésű krisztallit,
   hajtogatódás szomszédos visszalépés alapján, lemezkének is nevezik), vagy
-  \textbf{fibrilla} (vonalszerű, elnyújtott felhajtogatódás. Pálcikának is
+  \textbf{fibrilla} (vonalszerű, elnyújtott felhajtogatódás, pálcikának is
   nevezik) keletkezik.
 \end{question}
 
@@ -1082,9 +1099,10 @@
   rendezett részen (micellán) haladnak át. A fázisok egyértelmű síklapokkal
   nem határolhatóak el.
   \begin{figure}[H]
+    % By Roland.chem - Own work, CC0, https://commons.wikimedia.org/w/index.php?curid=37866505
     \centering
     \includegraphics[width=.3\textwidth]{./static/rojtos-micella.pdf}
-    \caption{Rojtos micella modell}
+    \caption{Rojtos micella modell\cite{bib:rojtos}}
     \label{fig:micella}
   \end{figure}
   \tcbline
@@ -1108,7 +1126,7 @@
   Gyorsabb hűtéssel kisebb szferolitok alakulnak ki. Finomabb szerkezet esetén
   az anyagnak jobb mechanikai tulajdonságai lesznek. Szferolitképződés a
   csokinál is megfigyelhető.
-  Méretük: $d = 5\,\mu\text{m} \dots \,\mathrm{mm}$.
+  Méretük: $d = 5\,\mu\text{m} \dots 5\,\mathrm{mm}$.
 \end{question}
 
 
@@ -1151,8 +1169,8 @@
   \begin{itemize}
     \item Molekuláris szerkezet
     \item Nanoszerkezet (krisztallitok és amorf fázisok)
-    \item Mezoszkópikus szerkezet (szuperkristályok, átmenen $nm$ és
-          $\text{\textmu}m$ között)
+    \item Mezoszkópikus szerkezet (szuperkristályok, átmenen nm és \textmu m
+          között)
     \item Finomszerkezet
     \item Makroszkópikus szerkezet
   \end{itemize}
@@ -1183,8 +1201,8 @@
 
   \underline{\textbf{\textit{Fázis:}}} \\
   Az anyag olyan \textbf{lényegi része}, amelynek kémiai összetétele és fizikai
-  állapota meegyezik (\textbf{egységes}). A fázisdomén egy termodinamikailag
-  összefüggő területe az anyagnak.
+  állapota meegyezik (\textbf{egységes}). A fázisdomén egy összefüggő területe
+  az anyagnak.
   \tcbline
 
   \underline{\textbf{\textit{Fizikai állapotok közötti átmenetek:}}}
@@ -1252,7 +1270,7 @@
       }
       ] (r2) to [bend left] (r3);
       \draw [
-      to-,
+      -to,
       ultra thick,
       cyan,
       postaction={
@@ -1266,7 +1284,7 @@
       }
       ] (r3) to [bend left] (r4);
       \draw [
-        -to,
+        to-,
         ultra thick,
         cyan,
         postaction={
@@ -1578,8 +1596,8 @@
           \begin{itemize}
             \item Kelvin-Voigt elem (rugó és viszkózus elem párhuzamos
                   kapcsolása).
-            \item Molekulaláncok ki- él visszagöngyölődése. \\
-                  (szegmensmozgások, konformációváltozások)
+            \item Molekulaláncok ki- él visszagöngyölődése.
+            \item Szegmensmozgások, konformációváltozások.
             \item Mechanikailag reverzibilis, de termodinamikailag nem.
             \item Hiszterézishurok jellemzi.
           \end{itemize}
@@ -1627,7 +1645,10 @@
   }
   Viszkoelasztikus anyagoknál \textbf{rugalmas} (elasztikus) és
   \textbf{viszkózus} viselkedés is megfigyelhető. Összetett viselkedésüket
-  ideális tulajdonságok kombinációjaként írjuk le.
+  ideális tulajdonságok kombinációjaként írjuk le. Tulajdonságaik idő,
+  hőmérséklet, és deformáció-sebesség függőek. Nemlineáris
+  feszültség-deformáció kapcsolat jellemzi őket. Kúszás, mászás, csillapítás
+  az ilyen jellegük miatt jelentkezik.
   \tcbline
 
   \textbf{Lineárisan viszkoelasztikus} anyagoknál a szakítógörbéjüknek van
@@ -1913,7 +1934,7 @@
       \caption{Ritkán térhálós elasztomerek}
     \end{subfigure}
     \hfill
-    \caption{Lineáris amorf és elasztomerek összehasonlítása}
+    \caption{Lineáris amorf anyagok és elasztomerek összehasonlítása}
     \label{fig:comp1}
   \end{figure}
 \end{question}
@@ -2490,7 +2511,7 @@
   \underline{\textbf{\textit{Gyengén térhálós polimerek
         feszültségrelaxációja:}}} \\
   A gyengén térhálós polimerek kúszását a \textbf{Standard Solid modellel}
-  írhatjuk le. .
+  írhatjuk le.
   \begin{gather*}
     \sigma(t)
     = E_\infty \cdot \varepsilon_0
@@ -3356,7 +3377,8 @@
       \draw[gray, thick, dashed]
       (4.50,0) node[below right, black] {$1$} -- ++(0, 3.75);
     \end{tikzpicture}
-    \caption{Láncreakció és lépcsős eljárások koverziós diagramja}
+    \caption{\textcolor{cyan!50!black}{Láncreakció} és
+      \textcolor{yellow!50!black}{lépcsős eljárások} koverziós diagramja}
     \label{fig:conversion}
   \end{figure}
 \end{question}
@@ -3488,10 +3510,10 @@
   }
   A száraz keverőkkel \textbf{kompaundot} hozhatunk létre:
   \begin{itemize}
-    \item Szabadeséselvű – buktatott hordó
-    \item Eltoláselvű – keverő forgó lapáttal
-    \item Repítéselvű – nagysebességű örvényes keverő
-    \item Eltolás és repítéselvű – Fekvő henger
+    \item Szabadeséselvű – buktatott hordó (betonkeverő)
+    \item Eltoláselvű – keverő forgó lapáttal (kaszkádreaktor)
+    \item Repítéselvű – nagysebességű örvényes keverő (turmixgép)
+    \item Eltolás és repítéselvű – Fekvő henger (shredder)
     \item Vándorcsigával ellátott kúpos siló
           \begin{itemize}
             \item folyamatos betáplálású és folyamatos üzemű
@@ -3737,6 +3759,23 @@
   \textbf{kényszerszállítást} végeznek. Amennyiben a csigák forgásiránya azonos
   (együtt forgó), nem alakul ki menetenként zárt térfogat, ám a
   szállítóteljesítmény így is megfelelő.
+  \tcbline
+
+  \underline{\textbf{\textit{Anyagok és adalékanyagok:}}} \\[2mm]
+  Feldolgozott anyagok: PE, PP, PVC, PET (PES), PS (XPS), PUR \\[2mm]
+  Adalékanyagok lehetnek: hő- és UV-stabilizátorok, lágyítók, csúsztatók,
+  lángálló
+  \tcbline
+
+  \underline{\textbf{\textit{M2 laborgyakorlat:}}}
+  \begin{table}[H]
+    \centering\begin{tabular}{l l}
+      Extrúdercsiga típusa:  & magprogresszív        \\
+      Felhasznált alapanyag: & PP (Tipplen H145F)    \\
+      Fordulatszám:          & $20-100 \mathrm{RPM}$ \\
+      Hőmérséklet:           & $200^\circ\mathrm{C}$
+    \end{tabular}
+  \end{table}
 \end{question}
 
 
@@ -3748,7 +3787,7 @@
   \begin{figure}[H]
     \centering
     \includegraphics[width=.6\textwidth]{./static/extruder.png}
-    \caption{Extrúder}
+    \caption{Extrúder\cite{bib:laborok}}
     \label{fig:extruder}
   \end{figure}
 \end{question}
@@ -3765,15 +3804,15 @@
     \hfill
     \begin{subfigure}[b]{.60\textwidth}
       \centering
-      \includegraphics[height=42mm]{./static/extruder-csiga1.png}
+      \includegraphics[height=38mm]{./static/extruder-csiga1.png}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{.35\textwidth}
       \centering
-      \includegraphics[height=42mm]{./static/extruder-csiga2.png}
+      \includegraphics[height=38mm]{./static/extruder-csiga2.png}
     \end{subfigure}
     \hfill
-    \caption{Extrúdercsigák}
+    \caption{Extrúdercsigák\cite{bib:laborok}}
     \label{fig:extrudersn}
   \end{figure}
   \tcbline
@@ -3787,10 +3826,15 @@
           \end{itemize}
     \item Kompressziós szakasz
           \begin{itemize}
-            \item anyag megömlesztése (cirkulációs áramlások)
+            \item anyag megömlesztése (cirkulációs áramlások, meleg hengerfal)
             \item megfelelő nyomás biztosítása (magprogresszív/szögdegresszív)
+            \item kompressziós arány jellemzően: $1,75\dots 3$
           \end{itemize}
     \item Homogenizáló szakasz
+          \begin{itemize}
+            \item egyenletes hőeloszlatás és gáztalanítás, nem csak a végén
+                  lehet
+          \end{itemize}
   \end{itemize}
   \tcbline
 
@@ -3805,15 +3849,15 @@
     nevezünk zártsági foknak és mit mutat meg? Miért alakul ki keveredés az
     extruderben? Mire jó a szűrőbetét és a törőtárcsa?
   }
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=.35\textwidth]{./static/extruder-aramlasok.png}
+    \caption{Áramlási viszonyok a homogenizáló zónában\cite{bib:laborok}}
+    \label{fig:extruderV}
+  \end{figure}
   \[
     \dot{V}_e = \dot{V}_s - \dot{V}_t - \dot{V}_r
   \]
-  \begin{figure}[H]
-    \centering
-    \includegraphics[width=.4\textwidth]{./static/extruder-aramlasok.png}
-    \caption{Áramlási viszonyok a homogenizáló zónában}
-    \label{fig:extruderV}
-  \end{figure}
   \begin{itemize}
     \item $\dot{V}_s$
           – sodróáram
@@ -3840,7 +3884,8 @@
   \end{itemize}
   \tcbline
 
-  \textbf{Keveredés} az \textbf{örvényesség} miatt alakul ki.
+  \textbf{Keveredés} az \textbf{örvényesség} miatt alakul ki. A
+  \textbf{törötárcsa} és \textbf{szűrőbetét} a torlóáramot növelik.
   \begin{figure}[H]
     \centering
     \begin{tikzpicture}[ultra thick, scale=.5]
@@ -3893,12 +3938,13 @@
     extruderszerszámról. Mutassa be a részeit és részletesen magyarázza el a
     működését.
   }
-  Az \textbf{ömledékáram} egy körszimmetrikus magot, a \textbf{torpedót}
-  megkerüli, majd a végső méretre szűkítve hagyja el a szerszámot.
+  Az \textbf{ömledékáram} egy körszimmetrikus magot, a (tartóbakok tartotta)
+  \textbf{torpedót} megkerüli, majd a végső méretre szűkítve hagyja el a
+  szerszámot.
   \begin{figure}[H]
     \centering
-    \includegraphics{./static/csogyartas.png}
-    \caption{A csőgyártás szerszáma}
+    \includegraphics[scale=.9]{./static/csogyartas.png}
+    \caption{A csőgyártás szerszáma\cite{bib:laborok}}
     \label{fig:csogyartas}
   \end{figure}
   Szakaszai:
@@ -3941,7 +3987,7 @@
   \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{./static/szelesresu.png}
-    \caption{A szélesrésű szerszám}
+    \caption{A szélesrésű szerszám\cite{bib:laborok}}
     \label{fig:szelesresu}
   \end{figure}
   Az \textbf{ömledék} először a vállfa alakú \textbf{elosztócsatornába} kerül
@@ -4064,7 +4110,7 @@
   \begin{figure}[H]
     \centering
     \includegraphics[scale=.8]{./static/froccsgep.png}
-    \caption{A fröccsöntőgép részei}
+    \caption{A fröccsöntőgép részei\cite{bib:laborok}}
     \label{fig:froccs}
   \end{figure}
   \begin{enumerate}
@@ -4080,8 +4126,25 @@
     \item Vezérlő egység
     \item[+.] Szerszám – nem szokás részének nevezni
   \end{enumerate}
-  A fröccsöntőgép csigája axiálisan el tud mozogni, jóval nagyobb nyomásokat
-  tud elviselni.
+  A fröccsöntőgép csigája axiálisan el tud mozogni (hidraulikus dugattyú),
+  jóval nagyobb nyomásokat és hőmérsékleteket tud elviselni. Van rajta
+  visszaáramlásgátló.
+  \tcbline
+
+  \underline{\textbf{\textit{Feldolgozott anyagok és adalékanyagok:}}} \\[2mm]
+  Alapanyagok: PE, PP, PVC, PET, PS, PUR, \textbf{ABS}, alifás PA \\[2mm]
+  Adalékanyagok: színezék, antisztatizáló, égésgátló
+  \tcbline
+
+  \underline{\textbf{\textit{M3 laborgyakorlat:}}}
+  \begin{table}[H]
+    \centering\begin{tabular}{l l}
+      Alapanyag:   & ABS                   \\
+      Hőmérséklet: & $230^\circ\mathrm{C}$ \\
+      Nyomás:      & $1000 \,\mathrm{bar}$ \\
+      Termék:      & Kimérő
+    \end{tabular}
+  \end{table}
 \end{question}
 
 
@@ -4169,26 +4232,35 @@
     jelentését.
   }
   \begin{itemize}
-    \item[1–2,] A polimer ömledék megtölti a szerszámüreget (befröccsöntés),
-      miközben egyre nagyobb nyomás alá kerül.
-    \item[2–3,] Utónyomás, ami egészen a lepecsételődésig tart (4-es pont). Az
-      utónyomás kezdete egyben a hűtési idő kezdete is.
-    \item[4,] Lepecsételődési pont. Ekkor a legszűkebb keresztmetszetben
-      megszilárdul a polimer, így megakadályozza a további nyomásközvetítést.
-    \item[4–5,] A termék – közel állandó fajtérfogaton (izochor) – hűl,
-      miközben a nyomás csökken. A termék hűléséből adódó fajtérfogat
-      csökkenést a belső nyomás kompenzálja.
-    \item[5,] A termék nyomása elérni az atmoszférikus nyomást, a termék mérete
-      pontosan megegyezik a szerszámüreg méretével.
-    \item[5–6,] A termék –állandó nyomáson (izobar) – hűl, miközben a térfogata
-      csökken (zsugorodás).
-    \item[6,] Szerszámnyitás, késztermék eltávolítása.
-    \item[6–7,] A termék a szabadlevegőn tovább hűl, és ezáltal zsugorodik.
+    % \item[1–2,] A polimer ömledék megtölti a szerszámüreget (befröccsöntés),
+    %   miközben egyre nagyobb nyomás alá kerül.
+    % \item[2–3,] Utónyomás, ami egészen a lepecsételődésig tart (4-es pont). Az
+    %   utónyomás kezdete egyben a hűtési idő kezdete is.
+    % \item[4,] Lepecsételődési pont. Ekkor a legszűkebb keresztmetszetben
+    %   megszilárdul a polimer, így megakadályozza a további nyomásközvetítést.
+    % \item[4–5,] A termék – közel állandó fajtérfogaton (izochor) – hűl,
+    %   miközben a nyomás csökken. A termék hűléséből adódó fajtérfogat
+    %   csökkenést a belső nyomás kompenzálja.
+    % \item[5,] A termék nyomása elérni az atmoszférikus nyomást, a termék mérete
+    %   pontosan megegyezik a szerszámüreg méretével.
+    % \item[5–6,] A termék –állandó nyomáson (izobar) – hűl, miközben a térfogata
+    %   csökken (zsugorodás).
+    % \item[6,] Szerszámnyitás, késztermék eltávolítása.
+    % \item[6–7,] A termék a szabadlevegőn tovább hűl, és ezáltal zsugorodik.
+    \item[1–2,] \textbf{befröccsöntés}, nyomás egyre nő
+    \item[2–3,] átkapcsolás \textbf{utónyomásra} (veszteség), hűtés kezdete
+    \item[  4,] \textbf{lepecsételődési} pont (legszűkebb keresztmetszetben
+      megszilárdul)
+    \item[4–5,] \textbf{izochor} hűl (állandó fajtérfogat)
+    \item[  5,] atmoszférikus nyomás elérése
+      % \item[5–6,] \textbf{izobár} hűl, szerszám még \textbf{csukva}
+    \item[5–6–7,] \textbf{izobár} hűl, szerszám először zárva, majd nyitva –
+      \textbf{zsugorodás}
   \end{itemize}
   \begin{figure}[H]
     \centering
     \includegraphics{./static/amorffroccs.png}
-    \caption{Amorf polimerek $pvT$ diagramja}
+    \caption{Amorf polimerek $pvT$ diagramja\cite{bib:laborok}}
     \label{fig:pvT}
   \end{figure}
 \end{question}
@@ -4200,6 +4272,12 @@
     (igényes műszaki vázlat), mutassa be a részeit és részletesen magyarázza el
     a működését.
   }
+  \begin{figure}[H]
+    \centering
+    \includegraphics[scale=.9]{./static/extruzios_fuvas.png}
+    \caption{Extrúziós fúvás folyamata\cite{bib:eloadas}}
+    \label{fig:extr}
+  \end{figure}
   Az extrúziós fúvás olyan \textbf{folytonos eljárás}, amellyel
   \textbf{hulladékmentesen} készíthetünk akár fogantyús palackokat.
   Előgyártmánya képlékeny állapotbán lévő, \textbf{extrudált ömledékcső},
@@ -4208,9 +4286,10 @@
   szerszám alakját, felületét, tetejére \textbf{menet kerül}. A
   \textbf{falvastagság nem egyenletes}, nem használható nyomástartó edénynek.
   A szerszám alján \textbf{sorjazseb} és \textbf{vágóél} található. Utóbbi
-  a cső alját levágja, a felesleget leszedi. Leggyakrabban HDPE-ből állítunk
-  elő $0,1\dots50\,\mathrm{l}$-es palackokat, tartályokat,
-  gyógyszercsomagolásokat.
+  a cső alját levágja, a felesleget leszedi. Leggyakrabban HDPE-ből (nagy
+  ömledékszilárdság miatt) állítunk elő $0,1\dots50\,\mathrm{l}$-es palackokat,
+  tartályokat, gyógyszercsomagolásokat. (termék a HDPE miatt nem lehet
+  átlátszó)
 \end{question}
 
 
@@ -4219,14 +4298,20 @@
     főbb sajátosságait. Készítsen igényes műszaki vázlatot a fúvószerszámról és
     magyarázza el annak a működését.
   }
+  \begin{figure}[H]
+    \centering
+    \includegraphics[scale=.6]{./static/froccs_fuvas.png}
+    \caption{Fröccsfúvás folyamata\cite{bib:eloadas}}
+    \label{fig:froccsfuvas}
+  \end{figure}
   Fröccsfúvás során \textbf{fröccsöntött előgyártmányból} alakítunk ki
   nyomásálló palackokat (leggyakrabban PET palackot), melynek térfogata akár
   $20\,\mathrm{l}$ is lehet. Az előgyártmány \textbf{menetes, mini fiola}
   alalú, a menetes része az eljárás során már nem változik. Feldolgozás során a
-  fiola alját \textbf{előmelegítik}, esetenként tüskével \textbf{előnyújtják},
-  majd \textbf{forró levegőt fújnak} bele. A készterméken nincsen hegedés,
-  viszont alján \textbf{lepecsételődés} található. A terméken nem lehet
-  fogantyú, a gyártás \textbf{szakaszos}.
+  fiola alját \textbf{előmelegítik} ($T_g$ fölé), esetenként tüskével
+  \textbf{előnyújtják}, majd \textbf{forró levegőt fújnak} bele. A készterméken
+  nincsen hegedés, viszont alján \textbf{lepecsételődés} található. A terméken
+  nem lehet fogantyú, a gyártás \textbf{szakaszos}.
 \end{question}
 
 
@@ -4244,7 +4329,9 @@
   \textbf{homogén}, \textbf{feszültségmentes eloszlást} tudunk elérni,
   kisszériás gyártásban is gazdaságos, a termék könnyen kivehető a szerszámból,
   hiszen \textbf{kizsugorodik} belőle. Az eljárással akár nyomástartó edények
-  is készíthetőek, viszont van minimális falvastagság.
+  is készíthetőek, viszont van minimális falvastagság. Gyakori alapanyag: PE.
+  Ha $120^\circ$ fokot zár be az anyagbeöntés–fűtés–hűtés állomás, akkor azt
+  \textbf{Karusszel} elrendezésnek nevezzük.
   \begin{figure}[H]
     \centering
     \begin{tikzpicture}[ultra thick]
@@ -4314,12 +4401,55 @@
     kompozitokban? Miért használunk szálakat erősítésre? Mit nevezünk
     szálparadoxonnak? Miért érdemes szendvicsszerkezeteket használni?
   }
-  \textbf{Erősítőszálak} lehetnek: üvegszál, szénszál, aramidszál,
-  polietilén-szál.
+  \underline{\textit{\textbf{Erősítőszálak:}}}
+  \begin{itemize}
+    \item Üvegszál
+          \begin{itemize}
+            \item[$\circ$] $55-65\%$ \chemfig{SiO_2}-ből és egyéb fémoxidokból
+              áll, melyekkel óriásmolekulát alkot, kovalens és ionos kötésekkel
+              kapcsolódnak. Kb. 1000 elemi, $8-17 \text{\textmu m}$ átmérőjű
+              szálból rovingokat (köteg) képeznek.
+            \item[$+$] Olcsó, UV stabil, vegyszerálló, szigetelő.
+            \item[$-$] Törékeny, koptató hatású.
+          \end{itemize}
+    \item Szénszál
+          \begin{itemize}
+            \item[$\circ$] Grafitszerkezetből adódóan nagy szilárdságú, nagy
+              modolusú. Prekurzora (előterméke) elszenesíthető polimerszálak
+              lehetnek.
+            \item[$+$] Alacsony sűrűság, nagy modulus, szilárd, alacsony
+              hőtágulás.
+            \item[$-$] Viszonylag rideg, drága.
+          \end{itemize}
+    \item Aramid szál
+          \begin{itemize}
+            \item[$+$] Nagyfokú orientáltság miatt nagy szilárdságú,
+              szívós, ütésálló, hajlékony, lángálló, alacsony sűrűség.
+            \item[$-$] UV- és nedvességérzékeny, alacsony nyomószilárdsági
+              értékek.
+          \end{itemize}
+    \item Polietilén szál
+          \begin{itemize}
+            \item[$+$] UHMWPE gél jellegű oldatból kiindulva, nagymértékű
+              orientációt alkalmaznak gyártásakor.
+            \item[$-$] Csekély adhézió más polimerekkel, max
+              $140^\circ\mathrm{C}$
+          \end{itemize}
+    \item Kiszerelési formák
+          \begin{itemize}
+            \item 1D – roving(köteg), szalag
+            \item 2D – szőtt és kötött textíliák
+            \item 3D – kelmék és kelmerendszerek
+          \end{itemize}
+  \end{itemize}
   \tcbline
 
-  \textbf{Mátrixanyag} lehet hőre lágyuló (polipropilén) és hőre keményedő
-  (poliészter, epoxigyanta) is.
+  \underline{\textit{\textbf{Mátrixanyag:}}}
+  \begin{itemize}
+    \item Propilén – hőre lágyuló
+    \item Polieszter – műgyanta
+    \item Epoxigyanta
+  \end{itemize}
   \tcbline
 
   \textbf{Erősítőszálakat} használunk, mivel használati eszközben az
@@ -4513,6 +4643,14 @@
             \end{itemize}
     \end{itemize}
   \end{multicols}
+  \begin{itemize}
+    \item SLS (szelektív lézer szinterézis) – részecskéből, 1 komponens
+    \item 3D printing – részecske + kötőanyag
+    \item FDM (ömledékrétegezés) – ömlesztés + szilárdítás
+    \item Polyjet – térhálósítás lámpával
+    \item SLA (sztereolitográfia) – térhálósítás lézerrel
+    \item LOM (réteges kivágás és felépítés) – lapokból
+  \end{itemize}
   \tcbline
 
   \underline{\textbf{\textit{Standard Tessellation Language}}}: (STL)\\
@@ -4526,23 +4664,38 @@
 \begin{question}{
     Mutassa be a 3D printing és az FDM technológiát.
   }
-  \underline{\textbf{\textit{3D printing}}}: \\
+  \underline{\textbf{\textit{3D printing}}}:
+  \begin{figure}[H]
+    \centering
+    \includegraphics[scale=.6]{./static/3d-printing.png}
+    \caption{3D printing\cite{bib:laborok}}
+    \label{fig:3dprinting}
+  \end{figure}
   Tintasugaras nyomtatókhoz hasonló elvű. A modellt előszőr \textbf{szeletekre
     bontja}, majd elegyengeti a porfürdőt. \textbf{Kötőanyagot} visz fel a
   \textbf{porfürdő} tetejére, majd a munkaasztal egy rétegvastagsággal
   lesüllyed. Ezután a porterítő henger újra port terít. Ez a folyamat az utolsó
   ciklusig ismétlődik. Gyors, egyszerű és olcsó eljárás, megtámasztás nem
   szükséges, viszont utólagos kezelés szükséges, belső felületekhez sem tudunk
-  hozzáférni, ezért a pontosság korlátozott.
+  hozzáférni, ezért a pontosság korlátozott. Az alapanyag szinte bármi lehet:
+  kerámiák, fémek, polimerek (google: PLA, ABS, PC, PVA), kompozitok.
   \tcbline
 
   \underline{\textbf{\textit{Ömledékrétegezés}}}:
-  (FDM – Fused deposition modeling)\\
+  (FDM – Fused deposition modeling)
+  \begin{figure}[H]
+    \centering
+    \includegraphics[scale=.5]{./static/fdm.png}
+    \caption{Ömledékrétegezés\cite{bib:laborok}}
+    \label{fig:omledek}
+  \end{figure}
   A gép a \textbf{filamentet} (szál formátumú, hőre lágyuló polimer) az
   \textbf{extrúderfejen} keresztül, szűk fúvókán át a modelltérbe sajtolja,
   amely az előző réteggel összeheged, és megszilárdul.
   Magyarországon ez a legelterjedtebb eljárás, jó ár-érték arányú, sokféle
-  alapanyaggal használható, viszont szerény pontosságú berendezés.
+  alapanyaggal használható, viszont szerény pontosságú berendezés. Gyakran
+  \textbf{támaszanyag} szükséges, ipari gépekben erre másik polimert
+  használnak. Filamentanyag lehet: PLA, ABS, PC, PMMA, PEEK.
 \end{question}
 
 
@@ -4555,13 +4708,26 @@
   sugárzás hatására indul meg.
   \tcbline
 
-  \underline{\textbf{\textit{Polyjet}}}: \\
+  \underline{\textbf{\textit{Polyjet}}}:
+  \begin{figure}[H]
+    \centering
+    \includegraphics[scale=.75]{./static/polyjet.png}
+    \caption{Polyjet\cite{bib:laborok}}
+    \label{fig:polyjet}
+  \end{figure}
   A sugátzást egy $250\,\mathrm{W}$-os izzóval biztosítjuk
   (\textbf{UV-sugárzás}). Jó ár-érték arány, a legpontosabb eljárás, viszont
-  időigényes, a berendezés drága.
+  időigényes, a berendezés drága, \textbf{támaszanyag} szükséges, melyet
+  gyártás után mosássl távolíthatunk el. Alapanyag: Connex.
   \tcbline
 
-  \underline{\textbf{\textit{Sztereolitográfia}}}: (SLA)\\
+  \underline{\textbf{\textit{Sztereolitográfia}}}: (SLA)
+  \begin{figure}[H]
+    \centering
+    \includegraphics[scale=.75]{./static/SLA.png}
+    \caption{Sztereolitográfia\cite{bib:laborok}}
+    \label{fig:sla}
+  \end{figure}
   A térhalósítás \textbf{lézer} segítségével. Munkaasztal mindig egy
   rétegvastagsággal süllyed le, lézer befutja, ez ismétlődik. Ez az eljárás is
   nagyon pontos, jó felületi minőségű a gyártmány, viszont támasz és
@@ -4599,7 +4765,7 @@
   }
   \begin{figure}[H]
     \centering
-    \begin{tikzpicture}[scale=1, ultra thick]
+    \begin{tikzpicture}[scale=.9, ultra thick]
       \pie[
         rotate=240,
         % text=legend,
@@ -4667,7 +4833,7 @@
   \begin{enumerate}
     \item hulladékgyűjtés szelektíven (otthon/gyűjtő)
     \item szétválogatás
-    \item aprítás (sredder – egytengelyes aprító)
+    \item aprítás (shredder – egytengelyes aprító)
     \item (extrúziós re)granulálás
     \item termékelőállítás (down-/upcycling)
   \end{enumerate}
@@ -4700,7 +4866,20 @@
 \end{question}
 
 
-% \begin{question}{
-%
-%   }
+\vfill
+\begin{thebibliography}{9}
+  \bibitem{bib:eloadas}
+  \textsc{Molnár Kolos} és \textsc{Mészáros László}
+  – \emph{Polimertechnika} \emph{előadások} (BMEGEPTBM01)
+
+  \bibitem{bib:laborok}
+  \textsc{BME GPK Polimertechnika Tanszék}
+  – \emph{Laborgyakorlati sillabuszok}
+
+  % By Roland.chem - Own work, CC0, https://commons.wikimedia.org/w/index.php?curid=37866505
+  \bibitem{bib:rojtos}
+  \textsc{Ronald.chem}
+  – \href{https://commons.wikimedia.org/w/index.php?curid=37866505}{\texttt{Wikipédia}}
+\end{thebibliography}
+
 \end{document}
